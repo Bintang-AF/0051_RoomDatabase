@@ -1,3 +1,6 @@
+import org.gradle.accessors.dm.LibrariesForLibs
+
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
@@ -36,6 +39,8 @@ android {
     }
 }
 
+fun ksp(compiler: Provider<MinimalExternalModuleDependency>) {}
+
 dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
@@ -52,4 +57,17 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
+    //icon
+    implementation(libs.compose.icons)
+
+    //room dan ksp
+    implementation(libs.bundles.room)
+    ksp(libs.room.compiler)
+
+    //view model
+    implementation(libs.lifecycle.viewmodel.compose)
+    implementation(libs.lifecycle.runtime.compose)
+
+    //Navigasi
+    implementation(libs.navigation.compose)
 }
