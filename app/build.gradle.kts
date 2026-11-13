@@ -70,4 +70,5 @@ dependencies {
 
     //Navigasi
     implementation(libs.navigation.compose)
+    implementation("androidx.compose.material:material-icons-core")
 }
