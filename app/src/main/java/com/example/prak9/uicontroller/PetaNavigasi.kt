@@ -1,4 +1,4 @@
-package com.example.prak9.view.uicontroller
+package com.example.prak9.uicontroller
 
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
@@ -9,8 +9,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.prak9.uicontroller.DestinasiEntry
-import com.example.prak9.uicontroller.DestinasiHome
 import com.example.prak9.view.DetailSiswaScreen
 import com.example.prak9.view.EditSiswaScreen
 import com.example.prak9.view.EntrySiswaScreen
@@ -21,8 +19,8 @@ import com.example.prak9.view.route.DestinasiEditSiswa
 
 
 @Composable
-fun SiswaApp(navController: NavHostController= rememberNavController(), modifier: Modifier){
-    HostNavigasi(navController = navController)
+fun SiswaApp(navController: NavHostController = rememberNavController(), modifier: Modifier = Modifier){
+    HostNavigasi(navController = navController, modifier = modifier)
 }
 
 @OptIn(ExperimentalMaterial3Api::class)

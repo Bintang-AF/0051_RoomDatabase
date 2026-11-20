@@ -6,6 +6,9 @@ import com.example.prak9.uicontroller.DestinasiNavigasi
 
 object DestinasiDetailSiswa : DestinasiNavigasi {
     val idSiswaArg: Any
+        get() {
+            TODO()
+        }
     override val route = "detail_siswa"
     override val titleRes = R.string.detail_siswa
     const val itemIdArg = "idSiswa"
