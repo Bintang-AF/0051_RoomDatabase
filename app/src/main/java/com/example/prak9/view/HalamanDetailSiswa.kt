@@ -36,7 +36,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.prak9.R
 import com.example.prak9.room.Siswa
-import com.example.prak9.uicontroller.SiswaTopAppBar
 import com.example.prak9.view.route.DestinasiDetailSiswa
 import com.example.prak9.viewmodel.DetailSiswaUiState
 import com.example.prak9.viewmodel.DetailViewModel
@@ -57,7 +56,7 @@ fun DetailSiswaScreen(
             SiswaTopAppBar(
                 title = stringResource(DestinasiDetailSiswa.titleRes),
                 canNavigateBack = true,
-                navigateUp = navigateBack
+                navigateUp = navigateBack,
             )
         },
         floatingActionButton = {

@@ -7,15 +7,17 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.prak9.repositori.RepositoriSiswa
+import com.example.prak9.view.route.DestinasiDetailSiswa
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import kotlin.checkNotNull
 
 class EditViewModel(savedStateHandle: SavedStateHandle, private val repositoriSiswa: RepositoriSiswa) : ViewModel(){
     var uiStateSiswa by mutableStateOf(UIStateSiswa())
         private  set
 
-    private val idSiswa: Int = checkNotNull(savedStateHandle[DestinasiDetailSiswa.idSiswaArg])
+    private val idSiswa: Int = checkNotNull(savedStateHandle[DestinasiDetailSiswa.idSiswaArg as String])
     init {
         viewModelScope.launch {
             uiStateSiswa = repositoriSiswa.getSiswaStream(idSiswa)

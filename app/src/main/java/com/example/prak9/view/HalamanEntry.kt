@@ -15,7 +15,6 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
@@ -26,11 +25,10 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.prak9.R
 import com.example.prak9.uicontroller.DestinasiEntry
-import com.example.prak9.uicontroller.SiswaTopAppBar
 import com.example.prak9.viewmodel.DetailSiswa
 import com.example.prak9.viewmodel.EntryViewModel
-import com.example.prak9.viewmodel.PenyediaViewModel
 import com.example.prak9.viewmodel.UIStateSiswa
+import com.example.prak9.viewmodel.provider.PenyediaViewModel
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)

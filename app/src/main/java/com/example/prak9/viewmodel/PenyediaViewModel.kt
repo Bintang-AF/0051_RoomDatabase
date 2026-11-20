@@ -7,7 +7,6 @@ import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.prak9.AplikasiSiswa
-import com.example.prak9.repositori.AplikasiSiswa
 import com.example.prak9.viewmodel.DetailViewModel
 import com.example.prak9.viewmodel.EditViewModel
 import com.example.prak9.viewmodel.EntryViewModel
