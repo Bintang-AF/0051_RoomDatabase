@@ -9,10 +9,8 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.prak9.uicontroller.SiswaTopAppBar
 import com.example.prak9.view.route.DestinasiEditSiswa
 import com.example.prak9.viewmodel.EditViewModel
-import com.example.prak9.viewmodel.PenyediaViewModel
 import com.example.prak9.viewmodel.provider.PenyediaViewModel
 import kotlinx.coroutines.launch
 
@@ -47,4 +45,9 @@ fun EditSiswaScreen(
             modifier = Modifier.padding(innerPadding)
         )
     }
+}
+
+@Composable
+fun SiswaTopAppBar(title: String, canNavigateBack: Boolean, navigateUp: () -> Unit) {
+    TODO("Not yet implemented")
 }
