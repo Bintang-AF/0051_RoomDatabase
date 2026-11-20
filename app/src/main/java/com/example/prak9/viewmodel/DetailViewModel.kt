@@ -14,7 +14,7 @@ class DetailViewModel(savedStateHandle: SavedStateHandle,
                       private val repositoriSiswa: RepositoriSiswa
 ) : ViewModel(){
 
-    private val idSiswa : Int = checkNotNull(savedStateHandle[DetailSiswaDestination.idSiswaArg])
+    private val idSiswa : Int = checkNotNull(savedStateHandle[DestinasiDetailSiswa.idSiswaArg])
 
     val uiDetailState : StateFlow<DetailSiswaUiState> = repositoriSiswa.getSiswaStream(idSiswa)
         .filterNotNull()
