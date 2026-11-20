@@ -5,6 +5,7 @@ import com.example.prak9.repositori.RepositoriSiswa
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.filterNotNull
+import kotlinx.coroutines.flow.map
 
 class DetailViewModel(
     savedStateHandle: SavedStateHandle
@@ -23,9 +24,17 @@ class DetailViewModel(
                         initialValue = DetailSiswaUiState()
                     )
 
-                suspend fun deleteSiswa(){
+                suspend fun deleteSiswa() {
                     repositoriSiswa.deleteSiswa(uiDetailSiswa.detailSiswa.toSiswa())
                 }
 
+                companion object {
+                private const val TIMEOUT_MILLIS = 5_000L
+            }
+            }
 
-                )
+    data class DetailSiswaUiState(
+        val detailSiswa: DetailSiswa = DetailSiswa()
+        )
+
+)
