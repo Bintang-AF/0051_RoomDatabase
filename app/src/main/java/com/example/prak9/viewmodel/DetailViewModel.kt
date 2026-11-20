@@ -6,3 +6,9 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.filterNotNull
 
+class DetailViewModel(
+    savedStateHandle: SavedStateHandle
+    private val repositoriSiswa: RepositoriSiswa
+
+    private val idSiswa: Int = checkNotNull(savedStateHandle[DestinasiDetailSiswa.itemIdarg)
+
