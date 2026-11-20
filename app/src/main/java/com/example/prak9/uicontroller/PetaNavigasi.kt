@@ -1,5 +1,6 @@
 package com.example.prak9.uicontroller
 
+import android.R.attr.type
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.CenterAlignedTopAppBar
@@ -12,9 +13,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.example.prak9.R
 import com.example.prak9.view.EntrySiswaScreen
 import com.example.prak9.view.HomeScreen
@@ -60,12 +63,25 @@ fun HostNavigasi(
             HomeScreen(
                 navigateToItemEntry = {navController.navigate(DestinasiEntry.route)},
 
-                navigateToItemUpdate = {navController.navigate("${DestinasiEntry.route}/$it")}
+                navigateToItemUpdate = {navController.navigate("${DestinasiDetailSiswa.route}/$it")}
             )
         }
         composable(DestinasiEntry.route){
             EntrySiswaScreen(navigateBack = { navController.popBackStack()})
         }
 
+
+        composable(route = DestinasiDetailSiswa.routeWithArgs, arguments = Listof(navArgument(name = itemIdArg){
+            type = NavType.IntType
+        })
+        ){
+            DetailSiswaScreen(
+                navigateBack = {navController.navigaetup()})
+        }
+        composable(route=DestinasiEditSiswa.routeWithArgs, arguments = Listof(navArgument(name = DestinasiEditSiswa.itemIdArg.){
+            type = NavType.IntType})){
+            EditSiswaScreen(navigateBack = {navController.popBackStack()},
+                onNavigateUp = {navController.navigateUp()})
+        }
     }
 }
